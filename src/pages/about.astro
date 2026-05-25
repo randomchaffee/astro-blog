@@ -1,5 +1,19 @@
 ---
+const pageTitle = "About me";
 
+const identity = {
+    firstName: "Evan",
+    country: "The Philippines",
+    occupation: "CS Student",
+    school: "University of the Philippines Los Banos",
+    hobbies: ["programming", "playing", "automating the mundane"]
+};
+
+const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "Writing a mess"]
+
+const happy = true;
+const finished = false;
+const goal = 3;
 ---
 
 <html lang="en">
@@ -8,14 +22,14 @@
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <link rel="icon" href="/favicon.ico" />
         <meta name="viewport" content="width=device-width" />
-        <title>Astro</title>
+        <title>{pageTitle}</title>
     </head>
     <body>
         <a href="/">Home</a>
         <a href="/about/">About</a>
         <a href="/blog/">Blog</a>
         
-        <h1>About Me</h1>
+        <h1>{pageTitle}</h1>
         <h2>... and my new Astro site!</h2>
 
         <p>
@@ -28,5 +42,25 @@
             This site will update as I complete more of the tutorial,
             so keep checking back and see how my journey is going!
         </p>
+
+        <p>Here are a few facts about me:</p>
+        <ul>
+            <li>My name is {identity.firstName}.</li>
+            <li>I live in {identity.country} and I am currently a {identity.occupation}
+                at the {identity.school}.</li>
+            {identity.hobbies.length >= 2 &&
+                <li>Two of my hobbies are: {identity.hobbies[1]} and {identity.hobbies[2]}</li>
+            }
+        </ul>
+        <p>My skills are:</p>
+        <ul>
+            {skills.map((skill) => <li>{skill}</li>)}
+        </ul>
+
+        {happy && <p>Astro is really fun!</p>}
+
+        {finished && <p>I finished this tutorial!</p>}
+
+        {goal === 3 ? <p>My goal is to finish in 3 days.</p> : <p>My goal is not 3 days.</p>}
     </body>
 </html>
