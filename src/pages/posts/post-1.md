@@ -1,6 +1,6 @@
 ---
 layout: ../../layouts/MarkdownPostLayout.astro
-title: My First Blog Post (definetly not part of the web tutorial)
+title: My First Blog Post (definitely not part of the web tutorial)
 pubDate: 2026-05-26
 description: 'This is the first post of my new Astro blog.'
 author: randomchaffee
